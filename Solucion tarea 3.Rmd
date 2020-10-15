@@ -1,0 +1,81 @@
+---
+title: "Solución tarea 3"
+author: "Juan Carlos Trejos"
+date: "15 de octubre de 2020"
+output: html_document
+---
+
+
+##Ejercicio 3
+
+Objetivo: Cargar la función de regresión escalonada ("replicar_reg_scal()").
+
+```{r}
+
+source("./scripts/replicar_reg_scal.R")
+
+```
+
+##Ejercicio 4
+
+Objetivo: Calcular la proporción de falsos positivos al cambiar el número de variables en la función.
+
+```{r}
+
+nvars10 <- replicar_reg_scal(nvars = 10)
+nvars20 <- replicar_reg_scal(nvars = 20)
+nvars50 <- replicar_reg_scal(nvars = 50)
+nvars100 <- replicar_reg_scal(nvars = 100)
+
+falsos_positivos_nvars <- c(nvars10, nvars20, nvars50, nvars100)
+nvars <- c(10, 20, 50, 100)
+falsos_positivos_nvars
+
+```
+
+##Ejercicio 5
+
+Objetivo: Graficar la proporción de falsos positivos según el número de variables utilizado en la función de regresión escalonada.
+
+```{r, fig.align = 'center'}
+
+plot(falsos_positivos_nvars~nvars, ylab="Proporción de falsos positivos (alfa=0.05)", xlab="Número de variables")
+
+```
+
+##Ejercicio 6
+
+Objetivo: Calcular la proporción de falsos positivos para diferentes números de variables, utilizando un valor de alfa de 0.04.
+
+```{r, fig.align = 'center'}
+
+nvars10a <- replicar_reg_scal(nvars = 10, alfa=0.04)
+nvars20a <- replicar_reg_scal(nvars = 20, alfa=0.04)
+nvars50a <- replicar_reg_scal(nvars = 50, alfa=0.04)
+nvars100a <- replicar_reg_scal(nvars = 100, alfa=0.04)
+
+falsos_positivos_nvars_a <- c(nvars10a, nvars20a, nvars50a, nvars100a)
+nvars <- c(10, 20, 50, 100)
+
+plot(falsos_positivos_nvars_a~nvars, ylab="Proporción de falsos positivos (alfa=0.04)", xlab="Número de variables")
+
+```
+
+##Ejercicio 7
+
+```{r, echo=FALSE}
+
+sessionInfo()
+
+```
+
+##Ejercicio 10
+
+Aquí se muestra el animal más hermoso del planeta, muy amenazado, no sólo directamente por la cacería sino también indirectamente por la pérdida de hábitat, principalmente por el cambio climático.
+
+```{r, fig.align = 'center', echo=FALSE}
+
+knitr::include_graphics("leopardo_de_las_nieves.jpg")
+
+```
+
