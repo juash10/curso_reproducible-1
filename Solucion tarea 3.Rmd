@@ -6,17 +6,18 @@ output: html_document
 ---
 
 
-##Ejercicio 3
+## Ejercicio 3
 
 Objetivo: Cargar la función de regresión escalonada ("replicar_reg_scal()").
 
 ```{r}
 
+setwd("C:/Users/JC/Desktop/curso_reproducible")
 source("./scripts/replicar_reg_scal.R")
 
 ```
 
-##Ejercicio 4
+## Ejercicio 4
 
 Objetivo: Calcular la proporción de falsos positivos al cambiar el número de variables en la función.
 
@@ -33,9 +34,9 @@ falsos_positivos_nvars
 
 ```
 
-##Ejercicio 5
+## Ejercicio 5
 
-Objetivo: Graficar la proporción de falsos positivos según el número de variables utilizado en la función de regresión escalonada.
+Objetivo: Graficar la proporción de falsos positivos según el n?mero de variables utilizado en la función de regresión escalonada.
 
 ```{r, fig.align = 'center'}
 
@@ -43,7 +44,7 @@ plot(falsos_positivos_nvars~nvars, ylab="Proporción de falsos positivos (alfa=0
 
 ```
 
-##Ejercicio 6
+## Ejercicio 6
 
 Objetivo: Calcular la proporción de falsos positivos para diferentes números de variables, utilizando un valor de alfa de 0.04.
 
@@ -71,7 +72,7 @@ sessionInfo()
 
 ##Ejercicio 10
 
-Aquí se muestra el animal más hermoso del planeta, muy amenazado, no sólo directamente por la cacería sino también indirectamente por la pérdida de hábitat, principalmente por el cambio climático.
+Aquí se muestra el animal más hermoso del planeta, muy amenazado, no sólo directamente por la cacería sino también indirectamente por la pérdida de hábitat, principalmente causada por el rápido calentamiento global.
 
 ```{r, fig.align = 'center', echo=FALSE}
 
